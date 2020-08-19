@@ -1,0 +1,50 @@
+<ul nz-menu
+  nzTheme="dark"
+  nzModel="inline"
+  [nzInlineCollapsed]="isCollapsed"
+  >
+  <li nz-menu-item
+    [nzSelected]="currentListUuid === 'today'"
+    (click)="click('today')">
+    <span>
+      <i
+        nz-icon
+        nzType="home"
+        nzTheme="outline"
+      ></i>
+      <span class="nav-text">Today</span>
+    </span>
+  </li>
+
+  <li
+    nz-menu-item
+    [nzSelected]="currentListUuid === 'todo'"
+    (click)="click('todo')"
+  >
+    <span>
+      <i
+        nz-icon
+        nzType="calendar"
+        nzTheme="outline"
+      ></i>
+      <span class="nav-text">TODO</span>
+    </span>
+  </li>
+
+  <li
+    nz-menu-item
+    *ngFor="let list of lists"
+    [nzSelected]="currentListUuid === list._id"
+    (click)="click(list._id)"
+    (contextmenu)="contextMenu($event, contextTemplate, list._id)"
+  >
+    <span>
+      <i
+        nz-icon
+        nzType="bars"
+        nzTheme="outline"
+      ></i>
+      <span class="nav-text">{{ list.title }}</span>
+    </span>
+  </li>
+</ul>
