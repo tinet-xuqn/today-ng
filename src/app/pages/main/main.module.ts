@@ -8,14 +8,30 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+
+
 import { MainRoutingModule } from './main-routing.module';
 import { LeftControlComponent } from './left-control/left-control.component';
 import { ListComponent } from './left-control/list/list.component';
+import { RightControlComponent } from './right-control/right-control.component';
+import { HeaderComponent } from './right-control/header/header.component';
+import { QuickAddComponent } from './right-control/quick-add/quick-add.component';
+import { TodoComponent } from './right-control/todo/todo.component';
 
 
 
 @NgModule({
-  declarations: [MainComponent, LeftControlComponent, ListComponent],
+  declarations: [
+    MainComponent,
+    LeftControlComponent,
+    ListComponent,
+    RightControlComponent,
+    HeaderComponent,
+    QuickAddComponent,
+    TodoComponent
+  ],
   imports: [
     MainRoutingModule,
     NzIconModule,
@@ -24,6 +40,8 @@ import { ListComponent } from './left-control/list/list.component';
     NzMenuModule,
     NzFormModule,
     NzDropDownModule,
+    NzListModule,
+    NzCheckboxModule,
     CommonModule,
     NzLayoutModule
   ]

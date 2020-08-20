@@ -1,0 +1,6 @@
+<input
+  nz-input
+  #addInput
+  placeholder="todo"
+  (keydown.enter)="addTodo(addInput.value); addInput.value = ''"
+>

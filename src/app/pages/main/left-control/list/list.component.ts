@@ -54,8 +54,8 @@ export class ListComponent implements OnInit, OnDestroy {
   click(uuid: string): void {
     this.listService.setCurrentUuid(uuid);
   }
-  contextMenu($event: MouseEvent, menu: NzDropdownMenuComponent, uuid: string): void {
-    this.nzContextMenuService.create($event, menu);
+  contextMenu($event: MouseEvent, contextTemplate: NzDropdownMenuComponent, uuid: string): void {
+    this.nzContextMenuService.create($event, contextTemplate);
     this.contextListUuid = uuid;
   }
 
