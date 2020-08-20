@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { LocalStorageService  } from '../../../services/local-storage/local-storage.service';
 import { USERNAME } from '../../../services/local-storage/local-storage.namespace';
+import { ListComponent } from '../left-control/list/list.component';
 
 @Component({
   selector: 'app-left-control',
@@ -10,6 +11,7 @@ import { USERNAME } from '../../../services/local-storage/local-storage.namespac
 export class LeftControlComponent implements OnInit {
 
   @Input() isCollapsed: boolean;
+  @ViewChild(ListComponent) listComponent: ListComponent;
   username: string;
   constructor(
     private store: LocalStorageService
@@ -19,4 +21,7 @@ export class LeftControlComponent implements OnInit {
     this.username = this.store.get(USERNAME);
   }
 
+  openAddListModal(): void {
+    this.listComponent.openAddListModal();
+  }
 }

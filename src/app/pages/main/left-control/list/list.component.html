@@ -48,3 +48,82 @@
     </span>
   </li>
 </ul>
+
+<nz-dropdown-menu #contextTemplate>
+  <ul nz-menu
+      nzInDropDown
+      nzSelectable
+      (nzClick)="close()">
+    <li nz-menu-item (click)="openRenameListModal()">
+      <i
+        nz-icon
+        nzType="edit"
+        nzTheme="outline"
+      ></i>
+      <span>重命名</span>
+    </li>
+    <li nz-menu-divider></li>
+    <li nz-menu-item (click)="delete()">
+      <i
+        nz-icon
+        nzType="delete"
+        nzTheme="outline"
+        nzDanger
+      ></i>
+      <span class="danger">删除列表</span>
+    </li>
+  </ul>
+</nz-dropdown-menu>
+
+<nz-modal
+  [(nzVisible)]="addListModalVisible"
+  nzTitle="添加新列表"
+  [nzClosable]="true"
+  [nzWidth]="420"
+  nzOkText="添加"
+  nzMaskClosable="取消"
+  [nzMaskClosable]="true"
+  (nzOnCancel)="closeAddListModal()"
+  (nzOnOk)="add(listInput.value); listInput.value = '';"
+>
+  <form nz-form>
+    <nz-form-item>
+      <nz-form-control>
+        <input
+          #listInput
+          nz-input
+          name="listTitle"
+          placeholder="列表名称"
+          (keydown.enter)="add(listInput.value); listInput.value = '';"
+        >
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</nz-modal>
+
+<nz-modal
+  [(nzVisible)]="renameListModalVisible"
+  nzTitle="重命名列表"
+  [nzClosable]="true"
+  [nzWidth]="420"
+  [nzOkText]="'重命名'"
+  [nzCancelText]="'取消'"
+  [nzMaskClosable]="true"
+  (nzOnCancel)="closeRenameListModal()"
+  (nzOnOk)="rename(listRenameInput.value); listRenameInput.value = '';"
+>
+  <form nz-form>
+    <nz-form-item>
+      <nz-form-control>
+        <input
+          #listRenameInput
+          nz-input
+          name="renameListTitle"
+          placeholder="列表名称"
+          (keydown.enter)="rename(listRenameInput.value); listRenameInput.value = '';"
+        >
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</nz-modal>
+
