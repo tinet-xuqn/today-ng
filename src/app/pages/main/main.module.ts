@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { MainComponent } from './main.component';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -10,6 +11,7 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzInputModule } from 'ng-zorro-antd/input';
 
 
 import { MainRoutingModule } from './main-routing.module';
@@ -34,6 +36,7 @@ import { TodoComponent } from './right-control/todo/todo.component';
   ],
   imports: [
     MainRoutingModule,
+    FormsModule,
     NzIconModule,
     NzButtonModule,
     NzModalModule,
@@ -41,6 +44,7 @@ import { TodoComponent } from './right-control/todo/todo.component';
     NzFormModule,
     NzDropDownModule,
     NzListModule,
+    NzInputModule,
     NzCheckboxModule,
     CommonModule,
     NzLayoutModule

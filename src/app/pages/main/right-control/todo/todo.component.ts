@@ -87,7 +87,7 @@ export class TodoComponent implements OnInit, OnDestroy {
   close(): void {
     this.nzContextMenuService.close();
   }
-  click(): void {
-
+  click(uuid: string): void {
+    console.log(uuid);
   }
 }
