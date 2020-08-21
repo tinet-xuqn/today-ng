@@ -1,1 +1,50 @@
-<p>header works!</p>
+<div class="header-container">
+  <div class="sort-btn-wrapper">
+    <a nz-dropdown [nzDropdownMenu]="sortMenu">
+      排序
+      <i nz-icon nzType="down"></i>
+    </a>
+    <nz-dropdown-menu #sortMenu="nzDropdownMenu">
+      <ul nz-menu nzSelectable>
+        <li nz-menu-item (click)="switchRankType('title')">
+          名称
+        </li>
+        <li nz-menu-item (click)="switchRankType('planAt')">
+          计划时间
+        </li>
+        <li nz-menu-item (click)="switchRankType('dueAt')">
+          截止时间
+        </li>
+        <li nz-menu-item (click)="switchRankType('completeFlag')">
+          完成状态
+        </li>
+      </ul>
+    </nz-dropdown-menu>
+
+    <div class="list-title-wrapper">
+      {{ listTitle }}
+    </div>
+  </div>
+  <img class="background-img" src="./assets/img/logo.png" alt="">
+  <div class="suggest-btn-wrapper">
+    <button
+      nz-button
+      nz-dropdown
+      nzType="primary"
+      [nzDropdownMenu]="suggestMenu"
+      nzTrigger="click">
+      <i nz-icon nzType="bulb" nzTheme="outline"></i>
+      建议
+    </button>
+    <nz-dropdown-menu #suggestMenu="nzDropdownMenu" class="dropdown-content-wrapper">
+      <ul
+        nz-menu
+        nzSelectable
+      >
+        <li nz-menu-item>1st menu item</li>
+        <li nz-menu-item>2nd menu item</li>
+        <li nz-menu-item>3rd menu item</li>
+      </ul>
+    </nz-dropdown-menu>
+  </div>
+</div>

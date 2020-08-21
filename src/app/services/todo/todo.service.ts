@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, from } from 'rxjs';
 import { LocalStorageService } from '../local-storage/local-storage.service';
 import { ListService } from '../list/list.service';
 import { floorToMinute, ONE_HOUR, getCurrentTime } from '../../../utils/time';
 import { Todo } from '../../../domain/entities';
+import { RankBy } from '../../../domain/type';
 import { TODOS } from '../local-storage/local-storage.namespace';
 
 @Injectable({
@@ -13,6 +14,10 @@ export class TodoService {
 
   private todos: Todo[] = [];
   todo$ = new Subject<Todo[]>();
+
+  private rank: RankBy = 'title';
+  rank$ = new Subject<RankBy>();
+
   constructor(
     private listService: ListService,
     private store: LocalStorageService
@@ -22,6 +27,7 @@ export class TodoService {
 
   private broadCast(): void {
     this.todo$.next(this.todos);
+    this.rank$.next(this.rank);
   }
 
   private persist(): void {
@@ -100,5 +106,10 @@ export class TodoService {
   deleteInList(uuid: string): void {
     const toDelete = this.todos.filter(t => t.listUUID === uuid);
     toDelete.forEach(t => this.delete(t._id));
+  }
+
+  toggleRank(r: RankBy): void {
+    this.rank = r;
+    this.rank$.next(r);
   }
 }
