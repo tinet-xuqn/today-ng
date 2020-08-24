@@ -1,0 +1,21 @@
+<div class="suggest-container container">
+  <span style="font-weight: 700;">
+    接下来打算做什么？请考虑我们的建议！
+  </span>
+
+  <nz-list class="suggest-list" >
+    <nz-list-item class="suggest-item" *ngFor="let item of suggestedTodo">
+      <nz-list-item-meta [nzDescription]="item.desc">
+        <nz-list-item-meta-title>
+          <a href="https://ng.ant.design">{{ item.name.last }}</a>
+        </nz-list-item-meta-title>
+      </nz-list-item-meta>
+      <nz-list-item-action>
+        <a (click)="setTodoToday(item)">edit</a>
+      </nz-list-item-action>
+    </nz-list-item>
+  </nz-list>
+  <div class="no-suggestion" *ngIf="suggestedTodo.length === 0">
+    暂无建议
+  </div>
+</div>

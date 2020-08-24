@@ -12,7 +12,11 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzInputModule } from 'ng-zorro-antd/input';
-
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
 
 import { MainRoutingModule } from './main-routing.module';
 import { LeftControlComponent } from './left-control/left-control.component';
@@ -21,6 +25,8 @@ import { RightControlComponent } from './right-control/right-control.component';
 import { HeaderComponent } from './right-control/header/header.component';
 import { QuickAddComponent } from './right-control/quick-add/quick-add.component';
 import { TodoComponent } from './right-control/todo/todo.component';
+import { SuggestComponent } from './right-control/header/suggest/suggest.component';
+import { DetailComponent } from './detail/detail.component';
 
 
 
@@ -32,7 +38,9 @@ import { TodoComponent } from './right-control/todo/todo.component';
     RightControlComponent,
     HeaderComponent,
     QuickAddComponent,
-    TodoComponent
+    TodoComponent,
+    SuggestComponent,
+    DetailComponent
   ],
   imports: [
     MainRoutingModule,
@@ -46,6 +54,11 @@ import { TodoComponent } from './right-control/todo/todo.component';
     NzListModule,
     NzInputModule,
     NzCheckboxModule,
+    NzPopconfirmModule,
+    NzMessageModule,
+    NzDatePickerModule,
+    NzSwitchModule,
+    NzDividerModule,
     CommonModule,
     NzLayoutModule
   ]

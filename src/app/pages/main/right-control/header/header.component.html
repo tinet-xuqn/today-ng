@@ -32,19 +32,13 @@
       nz-dropdown
       nzType="primary"
       [nzDropdownMenu]="suggestMenu"
+      nzOverlayClassName="dropdown-content-wrapper"
       nzTrigger="click">
       <i nz-icon nzType="bulb" nzTheme="outline"></i>
       建议
     </button>
-    <nz-dropdown-menu #suggestMenu="nzDropdownMenu" class="dropdown-content-wrapper">
-      <ul
-        nz-menu
-        nzSelectable
-      >
-        <li nz-menu-item>1st menu item</li>
-        <li nz-menu-item>2nd menu item</li>
-        <li nz-menu-item>3rd menu item</li>
-      </ul>
+    <nz-dropdown-menu #suggestMenu="nzDropdownMenu">
+      <app-suggest></app-suggest>
     </nz-dropdown-menu>
   </div>
 </div>

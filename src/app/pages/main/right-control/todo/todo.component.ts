@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import { combineLatest, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { TodoService } from '../../../../services/todo/todo.service';
@@ -40,6 +41,7 @@ export class TodoComponent implements OnInit, OnDestroy {
     private listService: ListService,
     private todoService: TodoService,
     private nzContextMenuService: NzContextMenuService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -106,5 +108,6 @@ export class TodoComponent implements OnInit, OnDestroy {
     this.nzContextMenuService.close();
   }
   click(uuid: string): void {
+    this.router.navigateByUrl(`/main/${uuid}`);
   }
 }
