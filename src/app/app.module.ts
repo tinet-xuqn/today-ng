@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { SetupModule } from './pages/setup/setup.module';
 import { MainModule } from './pages/main/main.module';
+import { SummaryModule } from './pages/summary/summary.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,6 +24,7 @@ registerLocaleData(zh);
     BrowserModule,
     AppRoutingModule,
     SetupModule,
+    SummaryModule,
     MainModule,
     FormsModule,
     HttpClientModule,
