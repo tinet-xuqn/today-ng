@@ -5,25 +5,25 @@ export const getCurrentTime =  (): number => {
   return new Date().getTime();
 };
 
-export const getTodayTime = function (): number {
+export const getTodayTime = (): number => {
   return floorToDate(new Date());
 };
 
-export const floorToDate = function (time: any): number {
+export const floorToDate = (time: any): number => {
   const t = new Date(time);
   t.setHours(0, 0, 0, 0);
   return t.getTime();
 };
 
-export const floorToMinute = function (time: any): number {
+export const floorToMinute = (time: any): number => {
   const t = new Date(time);
   t.setSeconds(0, 0);
   return t.getTime();
 };
 
-export const lessThanADay = function (
+export const lessThanADay = (
   later: number,
   earlier: number = getCurrentTime()
-) {
+) => {
   return later - earlier < ONE_DAY;
 };
