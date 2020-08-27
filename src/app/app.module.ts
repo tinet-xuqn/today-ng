@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SetupModule } from './pages/setup/setup.module';
 import { MainModule } from './pages/main/main.module';
 import { SummaryModule } from './pages/summary/summary.module';
+import { SettingModule } from './pages/setting/setting.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,6 +26,7 @@ registerLocaleData(zh);
     AppRoutingModule,
     SetupModule,
     SummaryModule,
+    SettingModule,
     MainModule,
     FormsModule,
     HttpClientModule,

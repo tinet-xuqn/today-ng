@@ -15,7 +15,7 @@ export class QuickAddComponent implements OnInit {
 
   addTodo(title: string): void {
     if (title) {
-      this.add.next(title);
+      this.add.emit(title);
     }
   }
 }

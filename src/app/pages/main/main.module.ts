@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MobxAngularModule } from 'mobx-angular';
 import { MainComponent } from './main.component';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -45,6 +46,7 @@ import { DetailComponent } from './detail/detail.component';
   imports: [
     MainRoutingModule,
     FormsModule,
+    MobxAngularModule,
     NzIconModule,
     NzButtonModule,
     NzModalModule,
