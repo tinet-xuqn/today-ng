@@ -9,7 +9,7 @@ import { Store } from '../../store/counter.store';
 export class SettingComponent implements OnInit {
 
   constructor(
-    private store: Store
+    public store: Store
   ) { }
 
   ngOnInit(): void {
