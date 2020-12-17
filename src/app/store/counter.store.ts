@@ -8,7 +8,10 @@ export class Store {
   @computed get total(): number {
     return this.price * this.amount;
   }
-  @action action(): void {
+  @action amountAction(): void {
     this.amount++;
+  }
+  @action priceAction(): void {
+    this.price++;
   }
 }
