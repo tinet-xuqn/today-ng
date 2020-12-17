@@ -15,7 +15,6 @@ export class RightControlComponent implements OnInit, AfterViewInit {
   }
   constructor() {
   }
-
   ngOnInit(): void {
   }
   ngAfterViewInit(): void {
