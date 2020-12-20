@@ -14,6 +14,7 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { MobxAngularModule } from 'mobx-angular';
 @NgModule({
   declarations: [
   ],
@@ -32,7 +33,8 @@ import { NzSwitchModule } from 'ng-zorro-antd/switch';
     NzDatePickerModule,
     NzSwitchModule,
     NzDividerModule,
-    NzLayoutModule
+    NzLayoutModule,
+    MobxAngularModule,
   ],
   exports: [
     NzIconModule,
@@ -49,7 +51,8 @@ import { NzSwitchModule } from 'ng-zorro-antd/switch';
     NzDatePickerModule,
     NzSwitchModule,
     NzDividerModule,
-    NzLayoutModule
+    NzLayoutModule,
+    MobxAngularModule,
   ]
 })
 export class AntdModule { }

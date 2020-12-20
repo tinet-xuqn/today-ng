@@ -8,6 +8,11 @@
   <div>
     总价：{{ store.total }}
   </div>
-  <button nz-button nzType="default" (click)="store.amountAction()">数量++</button>
-  <button nz-button nzType="default" (click)="store.priceAction()">单价++</button>
+
+  <app-action></app-action>
+
+
+  <div *mobxAutorun="{ delay: 3000 }">
+    {{ store.price }} * {{ store.amount }}
+  </div>
 </div>
