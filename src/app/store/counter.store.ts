@@ -14,4 +14,8 @@ export class Store {
   @action priceAction(): void {
     this.price++;
   }
+  @action allAction(): void {
+    this.amount++;
+    this.price++;
+  }
 }
